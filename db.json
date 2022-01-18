@@ -1,0 +1,24 @@
+{
+  "produits": [
+    {
+      "id": 1,
+      "titre": "Tomates",
+      "discription": "tomate bio"
+    },
+    {
+      "id": 2,
+      "titre": "banane",
+      "discription": "banane bio"
+    },  {
+      "id": 3,
+      "titre": "fraise",
+      "discription": "fraise bio"
+    },
+    {
+      "id": 4,
+      "titre": "Kiwi",
+      "discription": "kiwi bio"
+    }
+  ]
+
+}

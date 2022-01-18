@@ -1,0 +1,78 @@
+<p>produits works bien!</p>
+
+
+<main  class="container">
+    <section class="row border " >
+        <article class="col-md-4 " *ngFor= "let t of listedeproduite._embedded.produits">
+            <div class="card-body">
+              <h4 class="card-title">{{t.id}} </h4>
+
+              <h4 class="card-title">{{t.titre}} </h4>
+              <h6 class="card-title">{{t.discription}}</h6>
+            </div>
+           <div> <button type="button" class="btn btn-success mt-4" type="submit" (click)="suprimer(t)">Supprimer</button>
+          <button type="button" class="btn btn-success mt-4" type="submit" (click)="redireger(t)">Modifier</button></div>
+        </article>
+    </section>
+
+
+
+
+<!-- ****************************************TWO WAY BINDING******************************************************** -->
+<!-- <div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-header">
+  <h5 class="text-center">Two Way Binding</h5> 
+      </div>
+      
+        <div class="form-group">
+        <label for="nom">Your Name</label>
+        <input type="text" [(ngModel)]= "employeeshtml.titre" >
+        <p>{{employeeshtml.titre}}</p>
+      </div>
+
+      <div class="form-group">
+         <label for="nom">Your FirstName</label>
+        <input type="text" [(ngModel)]="employeeshtml.discription" >
+        <p>{{employeeshtml.discription}}</p>
+      </div>
+      
+
+  
+
+      <button class="btn btn-warning" (click)="saveproduits()"> Record</button>
+    
+    </div>
+  </div>
+</div> -->
+
+  <!-- *****************ajouter un produit ************************************-->
+
+<div class="container mt-4">
+  
+  <form ngSubmit="saveproduits(produit) ;produit.resetForm()" #produit="ngForm" >
+  
+      <!-- *****************titre **************************-->
+  <div class="form-group">
+      <label for="titre">Titre de produit</label>
+      <input type="text" name="titre" class="form-control" id="titre" ngModel required minlength="3" maxlength="30" [(ngModel)]= "produithtml.titre">
+  </div>
+  
+  <!-- *****************discription **************************-->
+  <div class="form-group mt-4">
+      <label for="nom">Discription de produit</label>
+      <input type="text" name="discription" class="form-control" id="discription"  ngModel required minlength="1" maxlength="30"  [(ngModel)]="produithtml.discription">
+  </div>
+    <button type="button" class="btn btn-success mt-4 ml-5" type="submit" (click)="saveproduits(produit)"  [disabled] = "isDisabled">Ajouter un produit</button>
+    <button class="btn btn-warning mt-4" (click)="modifier(produit)" [disabled] = "isDisabled1"> Enregister Modification</button>
+
+
+</form>
+</div>
+
+
+<!---------------------------------------------------------- modifier un produit -->
+
+
+</main>
